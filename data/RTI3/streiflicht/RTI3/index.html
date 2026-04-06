@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RTI3</title>
+<style>
+  body  { background:#1a1a1a; color:#ccc; font-family:sans-serif; margin:1em; }
+  h1    { color:#eee; }
+  h2    { color:#bbb; font-size:1em; margin:1.2em 0 0.4em;
+          border-bottom:1px solid #333; padding-bottom:0.2em; }
+  .grid { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:1em; }
+  .thumb{ width:220px; }
+  .thumb img { width:220px; height:165px; object-fit:cover;
+               border:1px solid #444; display:block; }
+  .thumb p  { font-size:0.65em; margin:3px 0 0; word-break:break-all;
+              text-align:center; color:#aaa; }
+</style>
+</head>
+<body>
+<h1>RTI3</h1>
+<p>46 outputs &nbsp;|&nbsp; 2026-04-04 10:25</p>
+<h2>Summary (2)</h2>
+<div class="grid">
+  <div class="thumb"><a href="fusion_combined_best.jpg"><img src="fusion_combined_best.jpg" loading="lazy"></a><p>fusion_combined_best</p></div>
+  <div class="thumb"><a href="fusion_pca_relief.jpg"><img src="fusion_pca_relief.jpg" loading="lazy"></a><p>fusion_pca_relief</p></div>
+</div>
+<h2>binarization (7)</h2>
+<div class="grid">
+  <div class="thumb"><a href="binarization/binary_adaptive_gaussian.jpg"><img src="binarization/binary_adaptive_gaussian.jpg" loading="lazy"></a><p>binary_adaptive_gaussian</p></div>
+  <div class="thumb"><a href="binarization/binary_adaptive_mean.jpg"><img src="binarization/binary_adaptive_mean.jpg" loading="lazy"></a><p>binary_adaptive_mean</p></div>
+  <div class="thumb"><a href="binarization/binary_dibco_ensemble.jpg"><img src="binarization/binary_dibco_ensemble.jpg" loading="lazy"></a><p>binary_dibco_ensemble</p></div>
+  <div class="thumb"><a href="binarization/binary_dibco_nick.jpg"><img src="binarization/binary_dibco_nick.jpg" loading="lazy"></a><p>binary_dibco_nick</p></div>
+  <div class="thumb"><a href="binarization/binary_dibco_wolf_jolion.jpg"><img src="binarization/binary_dibco_wolf_jolion.jpg" loading="lazy"></a><p>binary_dibco_wolf_jolion</p></div>
+  <div class="thumb"><a href="binarization/binary_otsu.jpg"><img src="binarization/binary_otsu.jpg" loading="lazy"></a><p>binary_otsu</p></div>
+  <div class="thumb"><a href="binarization/binary_sauvola.jpg"><img src="binarization/binary_sauvola.jpg" loading="lazy"></a><p>binary_sauvola</p></div>
+</div>
+<h2>core (9)</h2>
+<div class="grid">
+  <div class="thumb"><a href="core/fusion_denoised.jpg"><img src="core/fusion_denoised.jpg" loading="lazy"></a><p>fusion_denoised</p></div>
+  <div class="thumb"><a href="core/fusion_focus_map.jpg"><img src="core/fusion_focus_map.jpg" loading="lazy"></a><p>fusion_focus_map</p></div>
+  <div class="thumb"><a href="core/fusion_focus_stack.jpg"><img src="core/fusion_focus_stack.jpg" loading="lazy"></a><p>fusion_focus_stack</p></div>
+  <div class="thumb"><a href="core/fusion_gradient_field.jpg"><img src="core/fusion_gradient_field.jpg" loading="lazy"></a><p>fusion_gradient_field</p></div>
+  <div class="thumb"><a href="core/fusion_laplacian_pyramid.jpg"><img src="core/fusion_laplacian_pyramid.jpg" loading="lazy"></a><p>fusion_laplacian_pyramid</p></div>
+  <div class="thumb"><a href="core/fusion_max_projection.jpg"><img src="core/fusion_max_projection.jpg" loading="lazy"></a><p>fusion_max_projection</p></div>
+  <div class="thumb"><a href="core/fusion_optimized.jpg"><img src="core/fusion_optimized.jpg" loading="lazy"></a><p>fusion_optimized</p></div>
+  <div class="thumb"><a href="core/fusion_photometric_stereo.jpg"><img src="core/fusion_photometric_stereo.jpg" loading="lazy"></a><p>fusion_photometric_stereo</p></div>
+  <div class="thumb"><a href="core/fusion_retinex.jpg"><img src="core/fusion_retinex.jpg" loading="lazy"></a><p>fusion_retinex</p></div>
+</div>
+<h2>edges (18)</h2>
+<div class="grid">
+  <div class="thumb"><a href="edges/coherence_enhanced.jpg"><img src="edges/coherence_enhanced.jpg" loading="lazy"></a><p>coherence_enhanced</p></div>
+  <div class="thumb"><a href="edges/coherence_frangi.jpg"><img src="edges/coherence_frangi.jpg" loading="lazy"></a><p>coherence_frangi</p></div>
+  <div class="thumb"><a href="edges/frangi_strokes_bright.jpg"><img src="edges/frangi_strokes_bright.jpg" loading="lazy"></a><p>frangi_strokes_bright</p></div>
+  <div class="thumb"><a href="edges/frangi_strokes_combined.jpg"><img src="edges/frangi_strokes_combined.jpg" loading="lazy"></a><p>frangi_strokes_combined</p></div>
+  <div class="thumb"><a href="edges/frangi_strokes_dark.jpg"><img src="edges/frangi_strokes_dark.jpg" loading="lazy"></a><p>frangi_strokes_dark</p></div>
+  <div class="thumb"><a href="edges/fusion_blob_arc_frangi.jpg"><img src="edges/fusion_blob_arc_frangi.jpg" loading="lazy"></a><p>fusion_blob_arc_frangi</p></div>
+  <div class="thumb"><a href="edges/fusion_blob_doh.jpg"><img src="edges/fusion_blob_doh.jpg" loading="lazy"></a><p>fusion_blob_doh</p></div>
+  <div class="thumb"><a href="edges/fusion_circular_ensemble.jpg"><img src="edges/fusion_circular_ensemble.jpg" loading="lazy"></a><p>fusion_circular_ensemble</p></div>
+  <div class="thumb"><a href="edges/fusion_dog.jpg"><img src="edges/fusion_dog.jpg" loading="lazy"></a><p>fusion_dog</p></div>
+  <div class="thumb"><a href="edges/fusion_frst.jpg"><img src="edges/fusion_frst.jpg" loading="lazy"></a><p>fusion_frst</p></div>
+  <div class="thumb"><a href="edges/fusion_frst_variance.jpg"><img src="edges/fusion_frst_variance.jpg" loading="lazy"></a><p>fusion_frst_variance</p></div>
+  <div class="thumb"><a href="edges/fusion_gabor_orientation.jpg"><img src="edges/fusion_gabor_orientation.jpg" loading="lazy"></a><p>fusion_gabor_orientation</p></div>
+  <div class="thumb"><a href="edges/fusion_gabor_response.jpg"><img src="edges/fusion_gabor_response.jpg" loading="lazy"></a><p>fusion_gabor_response</p></div>
+  <div class="thumb"><a href="edges/fusion_hough_circles.jpg"><img src="edges/fusion_hough_circles.jpg" loading="lazy"></a><p>fusion_hough_circles</p></div>
+  <div class="thumb"><a href="edges/fusion_photometric_dog.jpg"><img src="edges/fusion_photometric_dog.jpg" loading="lazy"></a><p>fusion_photometric_dog</p></div>
+  <div class="thumb"><a href="edges/fusion_unsharp.jpg"><img src="edges/fusion_unsharp.jpg" loading="lazy"></a><p>fusion_unsharp</p></div>
+  <div class="thumb"><a href="edges/fusion_unsharp_strong.jpg"><img src="edges/fusion_unsharp_strong.jpg" loading="lazy"></a><p>fusion_unsharp_strong</p></div>
+  <div class="thumb"><a href="edges/phase_congruency.jpg"><img src="edges/phase_congruency.jpg" loading="lazy"></a><p>phase_congruency</p></div>
+</div>
+<h2>morphology (6)</h2>
+<div class="grid">
+  <div class="thumb"><a href="morphology/fusion_annular_blackhat.jpg"><img src="morphology/fusion_annular_blackhat.jpg" loading="lazy"></a><p>fusion_annular_blackhat</p></div>
+  <div class="thumb"><a href="morphology/fusion_annular_multiscale.jpg"><img src="morphology/fusion_annular_multiscale.jpg" loading="lazy"></a><p>fusion_annular_multiscale</p></div>
+  <div class="thumb"><a href="morphology/fusion_multiscale_bright.jpg"><img src="morphology/fusion_multiscale_bright.jpg" loading="lazy"></a><p>fusion_multiscale_bright</p></div>
+  <div class="thumb"><a href="morphology/fusion_multiscale_dark.jpg"><img src="morphology/fusion_multiscale_dark.jpg" loading="lazy"></a><p>fusion_multiscale_dark</p></div>
+  <div class="thumb"><a href="morphology/fusion_retinex_multiscale.jpg"><img src="morphology/fusion_retinex_multiscale.jpg" loading="lazy"></a><p>fusion_retinex_multiscale</p></div>
+  <div class="thumb"><a href="morphology/fusion_valleys_blackhat.jpg"><img src="morphology/fusion_valleys_blackhat.jpg" loading="lazy"></a><p>fusion_valleys_blackhat</p></div>
+</div>
+<h2>pca (4)</h2>
+<div class="grid">
+  <div class="thumb"><a href="pca/fusion_pca_pc1.jpg"><img src="pca/fusion_pca_pc1.jpg" loading="lazy"></a><p>fusion_pca_pc1</p></div>
+  <div class="thumb"><a href="pca/fusion_pca_pc2.jpg"><img src="pca/fusion_pca_pc2.jpg" loading="lazy"></a><p>fusion_pca_pc2</p></div>
+  <div class="thumb"><a href="pca/fusion_pca_pc3.jpg"><img src="pca/fusion_pca_pc3.jpg" loading="lazy"></a><p>fusion_pca_pc3</p></div>
+  <div class="thumb"><a href="pca/fusion_pca_pc4.jpg"><img src="pca/fusion_pca_pc4.jpg" loading="lazy"></a><p>fusion_pca_pc4</p></div>
+</div>
+</body>
+</html>

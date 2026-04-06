@@ -1,0 +1,407 @@
+{
+  "schema_version": "1.0",
+  "pipeline": {
+    "name": "Streiflicht Inscription Processor",
+    "version": "2.1.0",
+    "description": "Stone inscription enhancement via grazing light photography"
+  },
+  "processing": {
+    "start_time": "2026-04-04T10:10:58.662273",
+    "end_time": "2026-04-04T10:25:35.402192",
+    "duration_seconds": 876.739919,
+    "modality": "VisLight",
+    "color_mode": false
+  },
+  "parameters": {
+    "pca_components": 4,
+    "morphology_scales": [
+      5,
+      11,
+      15,
+      21,
+      31
+    ],
+    "retinex_sigmas": [
+      15,
+      80,
+      250
+    ],
+    "gabor_orientations": 8,
+    "dog_sigma_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        8
+      ]
+    ],
+    "binarization_block_size": 35,
+    "dibco_binarization": [
+      "wolf_jolion",
+      "nick",
+      "ensemble"
+    ],
+    "dibco_block_size": 51,
+    "focus_stack": true,
+    "max_projection": true,
+    "laplacian_pyramid_levels": 5,
+    "unsharp_sigma_normal": 2.0,
+    "unsharp_strength_normal": 1.5,
+    "unsharp_sigma_strong": 3.0,
+    "annular_inner_radius": 5,
+    "annular_outer_radius": 15,
+    "frst_radii": [
+      10,
+      15,
+      20,
+      25
+    ],
+    "frst_alpha": 2.0,
+    "unsharp_strength_strong": 2.5,
+    "ced_iterations": 15,
+    "frangi_scales": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "images_loaded": 56,
+    "images_total": 56
+  },
+  "camera": {
+    "camera_manufacturer": "Nikon",
+    "camera_model": "D5600",
+    "iso": 400,
+    "shutter_speed_s": 0.016666,
+    "aperture_f": 4.2,
+    "focal_length_mm": 34.0
+  },
+  "software": {
+    "python": "3.12.9",
+    "opencv": "4.13.0",
+    "numpy": "2.3.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "rawpy": "0.26.0",
+    "scipy": "1.16.3"
+  },
+  "input": {
+    "directory": "output_results\\Altar_Ohne_Inschrift\\RTI\\RTI3\\streiflicht",
+    "file_count": 56,
+    "files": [
+      "DSC_0135.NEF",
+      "DSC_0136.NEF",
+      "DSC_0137.NEF",
+      "DSC_0138.NEF",
+      "DSC_0139.NEF",
+      "DSC_0140.NEF",
+      "DSC_0141.NEF",
+      "DSC_0142.NEF",
+      "DSC_0143.NEF",
+      "DSC_0144.NEF",
+      "DSC_0145.NEF",
+      "DSC_0146.NEF",
+      "DSC_0147.NEF",
+      "DSC_0148.NEF",
+      "DSC_0149.NEF",
+      "DSC_0150.NEF",
+      "DSC_0151.NEF",
+      "DSC_0152.NEF",
+      "DSC_0153.NEF",
+      "DSC_0154.NEF",
+      "DSC_0155.NEF",
+      "DSC_0156.NEF",
+      "DSC_0157.NEF",
+      "DSC_0158.NEF",
+      "DSC_0159.NEF",
+      "DSC_0160.NEF",
+      "DSC_0161.NEF",
+      "DSC_0162.NEF",
+      "DSC_0163.NEF",
+      "DSC_0164.NEF",
+      "DSC_0165.NEF",
+      "DSC_0166.NEF",
+      "DSC_0167.NEF",
+      "DSC_0168.NEF",
+      "DSC_0169.NEF",
+      "DSC_0170.NEF",
+      "DSC_0171.NEF",
+      "DSC_0172.NEF",
+      "DSC_0173.NEF",
+      "DSC_0174.NEF",
+      "DSC_0175.NEF",
+      "DSC_0176.NEF",
+      "DSC_0177.NEF",
+      "DSC_0178.NEF",
+      "DSC_0179.NEF",
+      "DSC_0180.NEF",
+      "DSC_0181.NEF",
+      "DSC_0182.NEF",
+      "DSC_0183.NEF",
+      "DSC_0184.NEF",
+      "DSC_0185.NEF",
+      "DSC_0186.NEF",
+      "DSC_0187.NEF",
+      "DSC_0188.NEF",
+      "DSC_0189.NEF",
+      "DSC_0190.NEF"
+    ]
+  },
+  "output": {
+    "directory": "output_results\\Altar_Ohne_Inschrift\\RTI\\RTI3\\streiflicht\\RTI3",
+    "file_count": 48,
+    "files": [
+      {
+        "filename": "contact_sheet.jpg",
+        "size_bytes": 575783,
+        "modified": "2026-04-03T23:25:36.431170"
+      },
+      {
+        "filename": "fusion_combined_best.jpg",
+        "size_bytes": 15185456,
+        "modified": "2026-04-04T10:25:31.032922"
+      },
+      {
+        "filename": "fusion_pca_relief.jpg",
+        "size_bytes": 5453712,
+        "modified": "2026-04-04T10:15:29.543070"
+      },
+      {
+        "filename": "binarization\\binary_adaptive_gaussian.jpg",
+        "size_bytes": 6344666,
+        "modified": "2026-04-04T10:25:33.632256"
+      },
+      {
+        "filename": "binarization\\binary_adaptive_mean.jpg",
+        "size_bytes": 5491719,
+        "modified": "2026-04-04T10:25:33.706769"
+      },
+      {
+        "filename": "binarization\\binary_dibco_ensemble.jpg",
+        "size_bytes": 4740686,
+        "modified": "2026-04-04T10:25:35.399197"
+      },
+      {
+        "filename": "binarization\\binary_dibco_nick.jpg",
+        "size_bytes": 5140242,
+        "modified": "2026-04-04T10:25:35.327691"
+      },
+      {
+        "filename": "binarization\\binary_dibco_wolf_jolion.jpg",
+        "size_bytes": 4740237,
+        "modified": "2026-04-04T10:25:35.255539"
+      },
+      {
+        "filename": "binarization\\binary_otsu.jpg",
+        "size_bytes": 4239635,
+        "modified": "2026-04-04T10:25:33.555413"
+      },
+      {
+        "filename": "binarization\\binary_sauvola.jpg",
+        "size_bytes": 5265482,
+        "modified": "2026-04-04T10:25:33.779029"
+      },
+      {
+        "filename": "core\\fusion_denoised.jpg",
+        "size_bytes": 1472893,
+        "modified": "2026-04-04T10:11:03.027734"
+      },
+      {
+        "filename": "core\\fusion_focus_map.jpg",
+        "size_bytes": 20035291,
+        "modified": "2026-04-04T10:11:37.142597"
+      },
+      {
+        "filename": "core\\fusion_focus_stack.jpg",
+        "size_bytes": 11600082,
+        "modified": "2026-04-04T10:11:36.989720"
+      },
+      {
+        "filename": "core\\fusion_gradient_field.jpg",
+        "size_bytes": 4798958,
+        "modified": "2026-04-04T10:15:42.176229"
+      },
+      {
+        "filename": "core\\fusion_laplacian_pyramid.jpg",
+        "size_bytes": 3055092,
+        "modified": "2026-04-04T10:11:23.664577"
+      },
+      {
+        "filename": "core\\fusion_max_projection.jpg",
+        "size_bytes": 3828917,
+        "modified": "2026-04-04T10:11:03.078741"
+      },
+      {
+        "filename": "core\\fusion_optimized.jpg",
+        "size_bytes": 2257657,
+        "modified": "2026-04-04T10:11:02.989224"
+      },
+      {
+        "filename": "core\\fusion_photometric_stereo.jpg",
+        "size_bytes": 7477365,
+        "modified": "2026-04-04T10:15:39.555563"
+      },
+      {
+        "filename": "core\\fusion_retinex.jpg",
+        "size_bytes": 2907801,
+        "modified": "2026-04-04T10:13:10.473618"
+      },
+      {
+        "filename": "edges\\coherence_enhanced.jpg",
+        "size_bytes": 8579272,
+        "modified": "2026-04-04T10:19:42.165537"
+      },
+      {
+        "filename": "edges\\coherence_frangi.jpg",
+        "size_bytes": 20235824,
+        "modified": "2026-04-04T10:19:55.764283"
+      },
+      {
+        "filename": "edges\\frangi_strokes_bright.jpg",
+        "size_bytes": 18000950,
+        "modified": "2026-04-04T10:16:32.939618"
+      },
+      {
+        "filename": "edges\\frangi_strokes_combined.jpg",
+        "size_bytes": 17233789,
+        "modified": "2026-04-04T10:16:33.087853"
+      },
+      {
+        "filename": "edges\\frangi_strokes_dark.jpg",
+        "size_bytes": 17924708,
+        "modified": "2026-04-04T10:16:32.813574"
+      },
+      {
+        "filename": "edges\\fusion_blob_arc_frangi.jpg",
+        "size_bytes": 6415123,
+        "modified": "2026-04-04T10:25:30.213037"
+      },
+      {
+        "filename": "edges\\fusion_blob_doh.jpg",
+        "size_bytes": 2647227,
+        "modified": "2026-04-04T10:24:49.385419"
+      },
+      {
+        "filename": "edges\\fusion_circular_ensemble.jpg",
+        "size_bytes": 7430266,
+        "modified": "2026-04-04T10:25:30.600211"
+      },
+      {
+        "filename": "edges\\fusion_dog.jpg",
+        "size_bytes": 4432575,
+        "modified": "2026-04-04T10:15:54.450649"
+      },
+      {
+        "filename": "edges\\fusion_frst.jpg",
+        "size_bytes": 948503,
+        "modified": "2026-04-04T10:23:01.317628"
+      },
+      {
+        "filename": "edges\\fusion_frst_variance.jpg",
+        "size_bytes": 933537,
+        "modified": "2026-04-04T10:23:52.207730"
+      },
+      {
+        "filename": "edges\\fusion_gabor_orientation.jpg",
+        "size_bytes": 18909055,
+        "modified": "2026-04-04T10:15:49.972990"
+      },
+      {
+        "filename": "edges\\fusion_gabor_response.jpg",
+        "size_bytes": 5430817,
+        "modified": "2026-04-04T10:15:49.841480"
+      },
+      {
+        "filename": "edges\\fusion_hough_circles.jpg",
+        "size_bytes": 1796412,
+        "modified": "2026-04-04T10:24:11.788652"
+      },
+      {
+        "filename": "edges\\fusion_photometric_dog.jpg",
+        "size_bytes": 4684817,
+        "modified": "2026-04-04T10:15:58.933164"
+      },
+      {
+        "filename": "edges\\fusion_unsharp.jpg",
+        "size_bytes": 8545488,
+        "modified": "2026-04-04T10:15:59.519042"
+      },
+      {
+        "filename": "edges\\fusion_unsharp_strong.jpg",
+        "size_bytes": 10009084,
+        "modified": "2026-04-04T10:16:00.206764"
+      },
+      {
+        "filename": "edges\\phase_congruency.jpg",
+        "size_bytes": 283580,
+        "modified": "2026-04-04T10:18:34.505497"
+      },
+      {
+        "filename": "morphology\\fusion_annular_blackhat.jpg",
+        "size_bytes": 5614661,
+        "modified": "2026-04-04T10:19:56.071299"
+      },
+      {
+        "filename": "morphology\\fusion_annular_multiscale.jpg",
+        "size_bytes": 5472931,
+        "modified": "2026-04-04T10:22:16.125605"
+      },
+      {
+        "filename": "morphology\\fusion_multiscale_bright.jpg",
+        "size_bytes": 5576239,
+        "modified": "2026-04-04T10:15:44.074112"
+      },
+      {
+        "filename": "morphology\\fusion_multiscale_dark.jpg",
+        "size_bytes": 5583886,
+        "modified": "2026-04-04T10:15:44.004110"
+      },
+      {
+        "filename": "morphology\\fusion_retinex_multiscale.jpg",
+        "size_bytes": 5257115,
+        "modified": "2026-04-04T10:15:45.007059"
+      },
+      {
+        "filename": "morphology\\fusion_valleys_blackhat.jpg",
+        "size_bytes": 5741634,
+        "modified": "2026-04-04T10:15:45.153592"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc1.jpg",
+        "size_bytes": 4818297,
+        "modified": "2026-04-04T10:15:29.272630"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc2.jpg",
+        "size_bytes": 5453712,
+        "modified": "2026-04-04T10:15:29.337782"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc3.jpg",
+        "size_bytes": 6915969,
+        "modified": "2026-04-04T10:15:29.407964"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc4.jpg",
+        "size_bytes": 7086448,
+        "modified": "2026-04-04T10:15:29.480973"
+      },
+      {
+        "filename": "edges\\normal_map.png",
+        "size_bytes": 12632677,
+        "modified": "2026-04-04T10:16:03.778505"
+      }
+    ]
+  }
+}

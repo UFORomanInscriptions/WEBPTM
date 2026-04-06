@@ -1,0 +1,1057 @@
+{
+  "schema_version": "1.0",
+  "pipeline": {
+    "name": "Streiflicht Inscription Processor",
+    "version": "2.1.0",
+    "description": "Stone inscription enhancement via grazing light photography"
+  },
+  "processing": {
+    "start_time": "2026-04-06T12:30:51.267369",
+    "end_time": "2026-04-06T12:51:40.270408",
+    "duration_seconds": 1249.003039,
+    "modality": "VisLight",
+    "color_mode": false
+  },
+  "parameters": {
+    "pca_components": 4,
+    "morphology_scales": [
+      5,
+      11,
+      15,
+      21,
+      31
+    ],
+    "retinex_sigmas": [
+      15,
+      80,
+      250
+    ],
+    "gabor_orientations": 8,
+    "dog_sigma_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        8
+      ]
+    ],
+    "binarization_block_size": 35,
+    "dibco_binarization": [
+      "wolf_jolion",
+      "nick",
+      "ensemble"
+    ],
+    "dibco_block_size": 51,
+    "focus_stack": true,
+    "max_projection": true,
+    "laplacian_pyramid_levels": 5,
+    "unsharp_sigma_normal": 2.0,
+    "unsharp_strength_normal": 1.5,
+    "unsharp_sigma_strong": 3.0,
+    "annular_inner_radius": 5,
+    "annular_outer_radius": 15,
+    "frst_radii": [
+      10,
+      15,
+      20,
+      25
+    ],
+    "frst_alpha": 2.0,
+    "unsharp_strength_strong": 2.5,
+    "ced_iterations": 15,
+    "frangi_scales": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0
+    ],
+    "images_loaded": 56,
+    "images_total": 56
+  },
+  "camera": {
+    "camera_manufacturer": "Nikon",
+    "camera_model": "D5600",
+    "iso": 400,
+    "shutter_speed_s": 0.016666,
+    "aperture_f": 4.2,
+    "focal_length_mm": 34.0
+  },
+  "software": {
+    "python": "3.12.9",
+    "opencv": "4.13.0",
+    "numpy": "2.3.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+    "rawpy": "0.26.0",
+    "scipy": "1.16.3"
+  },
+  "input": {
+    "directory": "output_results\\Altar_Ohne_Inschrift\\RTI",
+    "file_count": 56,
+    "files": [
+      "DSC_0135.NEF",
+      "DSC_0136.NEF",
+      "DSC_0137.NEF",
+      "DSC_0138.NEF",
+      "DSC_0139.NEF",
+      "DSC_0140.NEF",
+      "DSC_0141.NEF",
+      "DSC_0142.NEF",
+      "DSC_0143.NEF",
+      "DSC_0144.NEF",
+      "DSC_0145.NEF",
+      "DSC_0146.NEF",
+      "DSC_0147.NEF",
+      "DSC_0148.NEF",
+      "DSC_0149.NEF",
+      "DSC_0150.NEF",
+      "DSC_0151.NEF",
+      "DSC_0152.NEF",
+      "DSC_0153.NEF",
+      "DSC_0154.NEF",
+      "DSC_0155.NEF",
+      "DSC_0156.NEF",
+      "DSC_0157.NEF",
+      "DSC_0158.NEF",
+      "DSC_0159.NEF",
+      "DSC_0160.NEF",
+      "DSC_0161.NEF",
+      "DSC_0162.NEF",
+      "DSC_0163.NEF",
+      "DSC_0164.NEF",
+      "DSC_0165.NEF",
+      "DSC_0166.NEF",
+      "DSC_0167.NEF",
+      "DSC_0168.NEF",
+      "DSC_0169.NEF",
+      "DSC_0170.NEF",
+      "DSC_0171.NEF",
+      "DSC_0172.NEF",
+      "DSC_0173.NEF",
+      "DSC_0174.NEF",
+      "DSC_0175.NEF",
+      "DSC_0176.NEF",
+      "DSC_0177.NEF",
+      "DSC_0178.NEF",
+      "DSC_0179.NEF",
+      "DSC_0180.NEF",
+      "DSC_0181.NEF",
+      "DSC_0182.NEF",
+      "DSC_0183.NEF",
+      "DSC_0184.NEF",
+      "DSC_0185.NEF",
+      "DSC_0186.NEF",
+      "DSC_0187.NEF",
+      "DSC_0188.NEF",
+      "DSC_0189.NEF",
+      "DSC_0190.NEF"
+    ]
+  },
+  "output": {
+    "directory": "output_results\\Altar_Ohne_Inschrift\\RTI\\RTI3",
+    "file_count": 178,
+    "files": [
+      {
+        "filename": "fusion_combined_best.jpg",
+        "size_bytes": 6604397,
+        "modified": "2026-04-06T12:45:52.483753"
+      },
+      {
+        "filename": "fusion_pca_relief.jpg",
+        "size_bytes": 3151406,
+        "modified": "2026-04-06T12:41:24.827859"
+      },
+      {
+        "filename": "rti_albedo.jpg",
+        "size_bytes": 4881019,
+        "modified": "2026-04-04T10:10:32.073633"
+      },
+      {
+        "filename": "rti_albedo_detail.jpg",
+        "size_bytes": 6351362,
+        "modified": "2026-04-04T10:10:32.142132"
+      },
+      {
+        "filename": "rti_combined_best.jpg",
+        "size_bytes": 6936555,
+        "modified": "2026-04-04T10:10:32.548349"
+      },
+      {
+        "filename": "rti_curvature.jpg",
+        "size_bytes": 6962493,
+        "modified": "2026-04-04T10:10:31.930111"
+      },
+      {
+        "filename": "rti_curvature_mean.jpg",
+        "size_bytes": 8583695,
+        "modified": "2026-04-04T10:10:32.013622"
+      },
+      {
+        "filename": "rti_epigraphy_best.jpg",
+        "size_bytes": 11806953,
+        "modified": "2026-04-04T10:10:32.650862"
+      },
+      {
+        "filename": "rti_mean_stack.jpg",
+        "size_bytes": 3681453,
+        "modified": "2026-04-04T10:10:36.320932"
+      },
+      {
+        "filename": "rti_normal_map.jpg",
+        "size_bytes": 11592988,
+        "modified": "2026-04-04T10:10:26.957207"
+      },
+      {
+        "filename": "rti_normal_nx.jpg",
+        "size_bytes": 7726050,
+        "modified": "2026-04-04T10:10:32.307338"
+      },
+      {
+        "filename": "rti_normal_ny.jpg",
+        "size_bytes": 11154582,
+        "modified": "2026-04-04T10:10:32.400868"
+      },
+      {
+        "filename": "rti_normal_nz.jpg",
+        "size_bytes": 7300775,
+        "modified": "2026-04-04T10:10:32.476639"
+      },
+      {
+        "filename": "rti_raking_E.jpg",
+        "size_bytes": 2244623,
+        "modified": "2026-04-04T10:10:31.546074"
+      },
+      {
+        "filename": "rti_raking_max.jpg",
+        "size_bytes": 3428190,
+        "modified": "2026-04-04T10:10:31.810601"
+      },
+      {
+        "filename": "rti_raking_mean.jpg",
+        "size_bytes": 2989817,
+        "modified": "2026-04-04T10:10:31.857601"
+      },
+      {
+        "filename": "rti_raking_N.jpg",
+        "size_bytes": 2616211,
+        "modified": "2026-04-04T10:10:31.458563"
+      },
+      {
+        "filename": "rti_raking_NE.jpg",
+        "size_bytes": 2588441,
+        "modified": "2026-04-04T10:10:31.630582"
+      },
+      {
+        "filename": "rti_raking_NW.jpg",
+        "size_bytes": 2567876,
+        "modified": "2026-04-04T10:10:31.674582"
+      },
+      {
+        "filename": "rti_raking_S.jpg",
+        "size_bytes": 2278462,
+        "modified": "2026-04-04T10:10:31.501565"
+      },
+      {
+        "filename": "rti_raking_SE.jpg",
+        "size_bytes": 2343904,
+        "modified": "2026-04-04T10:10:31.717100"
+      },
+      {
+        "filename": "rti_raking_SW.jpg",
+        "size_bytes": 2184485,
+        "modified": "2026-04-04T10:10:31.760092"
+      },
+      {
+        "filename": "rti_raking_W.jpg",
+        "size_bytes": 2302952,
+        "modified": "2026-04-04T10:10:31.589075"
+      },
+      {
+        "filename": "rti_skylight.jpg",
+        "size_bytes": 2297577,
+        "modified": "2026-04-04T10:10:32.189132"
+      },
+      {
+        "filename": "rti_specular.jpg",
+        "size_bytes": 1743134,
+        "modified": "2026-04-04T10:10:32.228196"
+      },
+      {
+        "filename": "advanced\\adv_flow_consistency.jpg",
+        "size_bytes": 1655479,
+        "modified": "2026-04-06T12:48:21.887081"
+      },
+      {
+        "filename": "advanced\\adv_flow_direction.jpg",
+        "size_bytes": 551144,
+        "modified": "2026-04-06T12:48:21.866089"
+      },
+      {
+        "filename": "advanced\\adv_flow_magnitude.jpg",
+        "size_bytes": 1091385,
+        "modified": "2026-04-06T12:48:21.845556"
+      },
+      {
+        "filename": "advanced\\adv_swt_likelihood.jpg",
+        "size_bytes": 1309487,
+        "modified": "2026-04-06T12:47:20.427008"
+      },
+      {
+        "filename": "advanced\\adv_swt_map.jpg",
+        "size_bytes": 1205398,
+        "modified": "2026-04-06T12:47:20.402503"
+      },
+      {
+        "filename": "advanced\\adv_topo_combined.jpg",
+        "size_bytes": 107942,
+        "modified": "2026-04-06T12:47:42.213717"
+      },
+      {
+        "filename": "advanced\\adv_topo_filtered.jpg",
+        "size_bytes": 107942,
+        "modified": "2026-04-06T12:47:31.452461"
+      },
+      {
+        "filename": "advanced\\adv_topo_persistence.jpg",
+        "size_bytes": 107942,
+        "modified": "2026-04-06T12:47:31.463460"
+      },
+      {
+        "filename": "binarization\\binary_adaptive_gaussian.jpg",
+        "size_bytes": 7232642,
+        "modified": "2026-04-06T12:45:53.765819"
+      },
+      {
+        "filename": "binarization\\binary_adaptive_mean.jpg",
+        "size_bytes": 6137806,
+        "modified": "2026-04-06T12:45:53.817335"
+      },
+      {
+        "filename": "binarization\\binary_dibco_ensemble.jpg",
+        "size_bytes": 5098852,
+        "modified": "2026-04-06T12:45:54.607672"
+      },
+      {
+        "filename": "binarization\\binary_dibco_nick.jpg",
+        "size_bytes": 5594983,
+        "modified": "2026-04-06T12:45:54.561606"
+      },
+      {
+        "filename": "binarization\\binary_dibco_wolf_jolion.jpg",
+        "size_bytes": 5100980,
+        "modified": "2026-04-06T12:45:54.517600"
+      },
+      {
+        "filename": "binarization\\binary_otsu.jpg",
+        "size_bytes": 4272766,
+        "modified": "2026-04-06T12:45:53.709808"
+      },
+      {
+        "filename": "binarization\\binary_sauvola.jpg",
+        "size_bytes": 5745856,
+        "modified": "2026-04-06T12:45:53.863342"
+      },
+      {
+        "filename": "core\\fusion_denoised.jpg",
+        "size_bytes": 1010581,
+        "modified": "2026-04-06T12:39:37.439558"
+      },
+      {
+        "filename": "core\\fusion_focus_map.jpg",
+        "size_bytes": 7934334,
+        "modified": "2026-04-06T12:39:50.828800"
+      },
+      {
+        "filename": "core\\fusion_focus_stack.jpg",
+        "size_bytes": 7414937,
+        "modified": "2026-04-06T12:39:50.775111"
+      },
+      {
+        "filename": "core\\fusion_gradient_field.jpg",
+        "size_bytes": 6149986,
+        "modified": "2026-04-06T12:41:28.673222"
+      },
+      {
+        "filename": "core\\fusion_laplacian_pyramid.jpg",
+        "size_bytes": 1623031,
+        "modified": "2026-04-06T12:39:45.118436"
+      },
+      {
+        "filename": "core\\fusion_max_projection.jpg",
+        "size_bytes": 2583772,
+        "modified": "2026-04-06T12:39:37.465878"
+      },
+      {
+        "filename": "core\\fusion_optimized.jpg",
+        "size_bytes": 1514780,
+        "modified": "2026-04-06T12:39:37.421012"
+      },
+      {
+        "filename": "core\\fusion_photometric_stereo.jpg",
+        "size_bytes": 4464441,
+        "modified": "2026-04-06T12:41:27.466988"
+      },
+      {
+        "filename": "core\\fusion_retinex.jpg",
+        "size_bytes": 1663106,
+        "modified": "2026-04-06T12:40:28.641041"
+      },
+      {
+        "filename": "edges\\coherence_enhanced.jpg",
+        "size_bytes": 4826699,
+        "modified": "2026-04-06T12:43:15.944316"
+      },
+      {
+        "filename": "edges\\coherence_frangi.jpg",
+        "size_bytes": 8551739,
+        "modified": "2026-04-06T12:43:22.167502"
+      },
+      {
+        "filename": "edges\\frangi_strokes_bright.jpg",
+        "size_bytes": 8340425,
+        "modified": "2026-04-06T12:41:51.488504"
+      },
+      {
+        "filename": "edges\\frangi_strokes_combined.jpg",
+        "size_bytes": 7988409,
+        "modified": "2026-04-06T12:41:51.551258"
+      },
+      {
+        "filename": "edges\\frangi_strokes_dark.jpg",
+        "size_bytes": 8342274,
+        "modified": "2026-04-06T12:41:51.438564"
+      },
+      {
+        "filename": "edges\\fusion_blob_arc_frangi.jpg",
+        "size_bytes": 3605948,
+        "modified": "2026-04-06T12:45:52.135643"
+      },
+      {
+        "filename": "edges\\fusion_blob_doh.jpg",
+        "size_bytes": 2419824,
+        "modified": "2026-04-06T12:45:40.719101"
+      },
+      {
+        "filename": "edges\\fusion_circular_ensemble.jpg",
+        "size_bytes": 4500636,
+        "modified": "2026-04-06T12:45:52.306665"
+      },
+      {
+        "filename": "edges\\fusion_dog.jpg",
+        "size_bytes": 3198364,
+        "modified": "2026-04-06T12:41:34.232629"
+      },
+      {
+        "filename": "edges\\fusion_frst.jpg",
+        "size_bytes": 680935,
+        "modified": "2026-04-06T12:44:11.626898"
+      },
+      {
+        "filename": "edges\\fusion_frst_variance.jpg",
+        "size_bytes": 627150,
+        "modified": "2026-04-06T12:44:30.614455"
+      },
+      {
+        "filename": "edges\\fusion_gabor_orientation.jpg",
+        "size_bytes": 7996941,
+        "modified": "2026-04-06T12:41:32.225065"
+      },
+      {
+        "filename": "edges\\fusion_gabor_response.jpg",
+        "size_bytes": 3291557,
+        "modified": "2026-04-06T12:41:32.167052"
+      },
+      {
+        "filename": "edges\\fusion_hough_circles.jpg",
+        "size_bytes": 1379129,
+        "modified": "2026-04-06T12:45:31.079183"
+      },
+      {
+        "filename": "edges\\fusion_photometric_dog.jpg",
+        "size_bytes": 3268513,
+        "modified": "2026-04-06T12:41:36.252077"
+      },
+      {
+        "filename": "edges\\fusion_unsharp.jpg",
+        "size_bytes": 4581285,
+        "modified": "2026-04-06T12:41:36.511904"
+      },
+      {
+        "filename": "edges\\fusion_unsharp_strong.jpg",
+        "size_bytes": 5351261,
+        "modified": "2026-04-06T12:41:36.815593"
+      },
+      {
+        "filename": "edges\\phase_congruency.jpg",
+        "size_bytes": 573599,
+        "modified": "2026-04-06T12:42:42.877554"
+      },
+      {
+        "filename": "enhance2\\enh2_cv_map.jpg",
+        "size_bytes": 2836168,
+        "modified": "2026-04-06T12:50:17.694625"
+      },
+      {
+        "filename": "enhance2\\enh2_diffuse.jpg",
+        "size_bytes": 4481565,
+        "modified": "2026-04-06T12:50:17.632137"
+      },
+      {
+        "filename": "enhance2\\enh2_directional.jpg",
+        "size_bytes": 5008055,
+        "modified": "2026-04-06T12:50:17.668625"
+      },
+      {
+        "filename": "enhance2\\enh2_guided_sharp.jpg",
+        "size_bytes": 4446570,
+        "modified": "2026-04-06T12:50:05.152720"
+      },
+      {
+        "filename": "enhance2\\enh2_homomorphic.jpg",
+        "size_bytes": 3841032,
+        "modified": "2026-04-06T12:48:38.396675"
+      },
+      {
+        "filename": "enhance2\\enh2_homomorphic_frangi.jpg",
+        "size_bytes": 8826336,
+        "modified": "2026-04-06T12:48:44.411827"
+      },
+      {
+        "filename": "enhance2\\enh2_kuwahara.jpg",
+        "size_bytes": 4936918,
+        "modified": "2026-04-06T12:49:49.471482"
+      },
+      {
+        "filename": "enhance2\\enh2_kuwahara_lines.jpg",
+        "size_bytes": 1878445,
+        "modified": "2026-04-06T12:49:49.508358"
+      },
+      {
+        "filename": "enhance2\\enh2_loggabor_max.jpg",
+        "size_bytes": 4396856,
+        "modified": "2026-04-06T12:49:26.169969"
+      },
+      {
+        "filename": "enhance2\\enh2_loggabor_ori.jpg",
+        "size_bytes": 5930667,
+        "modified": "2026-04-06T12:49:26.210480"
+      },
+      {
+        "filename": "enhance2\\enh2_loggabor_scale.jpg",
+        "size_bytes": 4540034,
+        "modified": "2026-04-06T12:49:26.249479"
+      },
+      {
+        "filename": "enhance2\\enh2_monogenic_amplitude.jpg",
+        "size_bytes": 5018750,
+        "modified": "2026-04-06T12:49:43.720624"
+      },
+      {
+        "filename": "enhance2\\enh2_monogenic_incised.jpg",
+        "size_bytes": 2047458,
+        "modified": "2026-04-06T12:49:43.871136"
+      },
+      {
+        "filename": "enhance2\\enh2_monogenic_lines.jpg",
+        "size_bytes": 3282350,
+        "modified": "2026-04-06T12:49:43.836138"
+      },
+      {
+        "filename": "enhance2\\enh2_monogenic_orientation.jpg",
+        "size_bytes": 7176492,
+        "modified": "2026-04-06T12:49:43.810136"
+      },
+      {
+        "filename": "enhance2\\enh2_monogenic_phase.jpg",
+        "size_bytes": 5624068,
+        "modified": "2026-04-06T12:49:43.762626"
+      },
+      {
+        "filename": "enhance2\\enh2_path_opening.jpg",
+        "size_bytes": 107942,
+        "modified": "2026-04-06T12:48:45.714521"
+      },
+      {
+        "filename": "enhance2\\enh2_path_strokes.jpg",
+        "size_bytes": 107942,
+        "modified": "2026-04-06T12:48:45.725522"
+      },
+      {
+        "filename": "enhance2\\enh2_rl_deconv.jpg",
+        "size_bytes": 4004758,
+        "modified": "2026-04-06T12:49:57.968619"
+      },
+      {
+        "filename": "enhance2\\enh2_rl_frangi.jpg",
+        "size_bytes": 8867455,
+        "modified": "2026-04-06T12:50:04.443050"
+      },
+      {
+        "filename": "enhance2\\enh2_ultimate_opening.jpg",
+        "size_bytes": 4684883,
+        "modified": "2026-04-06T12:49:46.219680"
+      },
+      {
+        "filename": "experimental\\exp_fourier_band_relief.jpg",
+        "size_bytes": 1454795,
+        "modified": "2026-04-06T12:50:33.172795"
+      },
+      {
+        "filename": "experimental\\exp_fourier_stroke_band.jpg",
+        "size_bytes": 1471695,
+        "modified": "2026-04-06T12:50:30.640379"
+      },
+      {
+        "filename": "experimental\\exp_gradient_domain_nlm.jpg",
+        "size_bytes": 958821,
+        "modified": "2026-04-06T12:50:41.389500"
+      },
+      {
+        "filename": "experimental\\exp_intrinsic_reflectance.jpg",
+        "size_bytes": 3827116,
+        "modified": "2026-04-06T12:50:58.995701"
+      },
+      {
+        "filename": "experimental\\exp_reflectance_frangi.jpg",
+        "size_bytes": 8544474,
+        "modified": "2026-04-06T12:51:04.799671"
+      },
+      {
+        "filename": "experimental\\exp_reflectance_shock.jpg",
+        "size_bytes": 10268641,
+        "modified": "2026-04-06T12:51:07.415382"
+      },
+      {
+        "filename": "experimental\\exp_rolling_guidance.jpg",
+        "size_bytes": 5023251,
+        "modified": "2026-04-06T12:50:34.405490"
+      },
+      {
+        "filename": "experimental\\exp_rolling_guidance_hard.jpg",
+        "size_bytes": 4636821,
+        "modified": "2026-04-06T12:50:38.640154"
+      },
+      {
+        "filename": "experimental\\exp_rolling_then_shock.jpg",
+        "size_bytes": 10406322,
+        "modified": "2026-04-06T12:51:37.722762"
+      },
+      {
+        "filename": "experimental\\exp_shock_filter.jpg",
+        "size_bytes": 10297245,
+        "modified": "2026-04-06T12:50:21.252981"
+      },
+      {
+        "filename": "experimental\\exp_shock_filter_hard.jpg",
+        "size_bytes": 10696173,
+        "modified": "2026-04-06T12:50:28.230681"
+      },
+      {
+        "filename": "experimental\\exp_shock_then_fourier.jpg",
+        "size_bytes": 1628459,
+        "modified": "2026-04-06T12:51:40.270408"
+      },
+      {
+        "filename": "experimental\\exp_structure_tensor_field.jpg",
+        "size_bytes": 5576477,
+        "modified": "2026-04-06T12:51:08.044986"
+      },
+      {
+        "filename": "experimental\\exp_structure_tensor_fine.jpg",
+        "size_bytes": 7445846,
+        "modified": "2026-04-06T12:51:08.783589"
+      },
+      {
+        "filename": "experimental\\exp_tv_shock_cascade.jpg",
+        "size_bytes": 9160441,
+        "modified": "2026-04-06T12:51:16.078220"
+      },
+      {
+        "filename": "experimental\\exp_tv_shock_cascade_hard.jpg",
+        "size_bytes": 7930162,
+        "modified": "2026-04-06T12:51:34.913546"
+      },
+      {
+        "filename": "morphology\\fusion_annular_blackhat.jpg",
+        "size_bytes": 3397070,
+        "modified": "2026-04-06T12:43:22.320955"
+      },
+      {
+        "filename": "morphology\\fusion_annular_multiscale.jpg",
+        "size_bytes": 3152851,
+        "modified": "2026-04-06T12:43:55.294460"
+      },
+      {
+        "filename": "morphology\\fusion_multiscale_bright.jpg",
+        "size_bytes": 3330824,
+        "modified": "2026-04-06T12:41:29.575558"
+      },
+      {
+        "filename": "morphology\\fusion_multiscale_dark.jpg",
+        "size_bytes": 3372654,
+        "modified": "2026-04-06T12:41:29.544567"
+      },
+      {
+        "filename": "morphology\\fusion_retinex_multiscale.jpg",
+        "size_bytes": 2885768,
+        "modified": "2026-04-06T12:41:30.010709"
+      },
+      {
+        "filename": "morphology\\fusion_valleys_blackhat.jpg",
+        "size_bytes": 3447311,
+        "modified": "2026-04-06T12:41:30.079689"
+      },
+      {
+        "filename": "neural\\confidence_map.jpg",
+        "size_bytes": 6980747,
+        "modified": "2026-04-06T12:47:20.106912"
+      },
+      {
+        "filename": "neural\\ensemble_mean.jpg",
+        "size_bytes": 4855636,
+        "modified": "2026-04-06T12:47:20.171447"
+      },
+      {
+        "filename": "neural\\nmf_albedo_material.jpg",
+        "size_bytes": 2304623,
+        "modified": "2026-04-04T10:25:49.955947"
+      },
+      {
+        "filename": "neural\\nmf_carving_edge.jpg",
+        "size_bytes": 2064596,
+        "modified": "2026-04-04T10:25:49.995946"
+      },
+      {
+        "filename": "neural\\nmf_component_carving.jpg",
+        "size_bytes": 2170842,
+        "modified": "2026-04-06T12:47:19.141130"
+      },
+      {
+        "filename": "neural\\nmf_component_lichen.jpg",
+        "size_bytes": 2669784,
+        "modified": "2026-04-06T12:47:19.114123"
+      },
+      {
+        "filename": "neural\\nmf_component_pigment.jpg",
+        "size_bytes": 2335733,
+        "modified": "2026-04-06T12:47:19.190494"
+      },
+      {
+        "filename": "neural\\nmf_component_substrate.jpg",
+        "size_bytes": 2736826,
+        "modified": "2026-04-06T12:47:19.085384"
+      },
+      {
+        "filename": "neural\\nmf_specular_detail.jpg",
+        "size_bytes": 3839161,
+        "modified": "2026-04-04T10:25:50.049155"
+      },
+      {
+        "filename": "neural\\nmf_surface_relief.jpg",
+        "size_bytes": 2791644,
+        "modified": "2026-04-04T10:25:49.912379"
+      },
+      {
+        "filename": "neural\\ps_albedo.jpg",
+        "size_bytes": 1917759,
+        "modified": "2026-04-06T12:47:12.150300"
+      },
+      {
+        "filename": "neural\\ps_depth.jpg",
+        "size_bytes": 275366,
+        "modified": "2026-04-06T12:47:12.191303"
+      },
+      {
+        "filename": "neural\\uncertainty_map.jpg",
+        "size_bytes": 6984271,
+        "modified": "2026-04-06T12:47:20.034446"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc1.jpg",
+        "size_bytes": 2806899,
+        "modified": "2026-04-06T12:41:24.697586"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc2.jpg",
+        "size_bytes": 3151406,
+        "modified": "2026-04-06T12:41:24.729592"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc3.jpg",
+        "size_bytes": 3637729,
+        "modified": "2026-04-06T12:41:24.762282"
+      },
+      {
+        "filename": "pca\\fusion_pca_pc4.jpg",
+        "size_bytes": 3783981,
+        "modified": "2026-04-06T12:41:24.796468"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\contact_sheet.jpg",
+        "size_bytes": 575783,
+        "modified": "2026-04-04T10:25:42.398816"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\fusion_combined_best.jpg",
+        "size_bytes": 15185456,
+        "modified": "2026-04-04T10:25:31.032922"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\fusion_pca_relief.jpg",
+        "size_bytes": 5453712,
+        "modified": "2026-04-04T10:15:29.543070"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\binarization\\binary_adaptive_gaussian.jpg",
+        "size_bytes": 6344666,
+        "modified": "2026-04-04T10:25:33.632256"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\binarization\\binary_adaptive_mean.jpg",
+        "size_bytes": 5491719,
+        "modified": "2026-04-04T10:25:33.706769"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\binarization\\binary_dibco_ensemble.jpg",
+        "size_bytes": 4740686,
+        "modified": "2026-04-04T10:25:35.399197"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\binarization\\binary_dibco_nick.jpg",
+        "size_bytes": 5140242,
+        "modified": "2026-04-04T10:25:35.327691"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\binarization\\binary_dibco_wolf_jolion.jpg",
+        "size_bytes": 4740237,
+        "modified": "2026-04-04T10:25:35.255539"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\binarization\\binary_otsu.jpg",
+        "size_bytes": 4239635,
+        "modified": "2026-04-04T10:25:33.555413"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\binarization\\binary_sauvola.jpg",
+        "size_bytes": 5265482,
+        "modified": "2026-04-04T10:25:33.779029"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_denoised.jpg",
+        "size_bytes": 1472893,
+        "modified": "2026-04-04T10:11:03.027734"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_focus_map.jpg",
+        "size_bytes": 20035291,
+        "modified": "2026-04-04T10:11:37.142597"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_focus_stack.jpg",
+        "size_bytes": 11600082,
+        "modified": "2026-04-04T10:11:36.989720"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_gradient_field.jpg",
+        "size_bytes": 4798958,
+        "modified": "2026-04-04T10:15:42.176229"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_laplacian_pyramid.jpg",
+        "size_bytes": 3055092,
+        "modified": "2026-04-04T10:11:23.664577"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_max_projection.jpg",
+        "size_bytes": 3828917,
+        "modified": "2026-04-04T10:11:03.078741"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_optimized.jpg",
+        "size_bytes": 2257657,
+        "modified": "2026-04-04T10:11:02.989224"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_photometric_stereo.jpg",
+        "size_bytes": 7477365,
+        "modified": "2026-04-04T10:15:39.555563"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\core\\fusion_retinex.jpg",
+        "size_bytes": 2907801,
+        "modified": "2026-04-04T10:13:10.473618"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\coherence_enhanced.jpg",
+        "size_bytes": 8579272,
+        "modified": "2026-04-04T10:19:42.165537"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\coherence_frangi.jpg",
+        "size_bytes": 20235824,
+        "modified": "2026-04-04T10:19:55.764283"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\frangi_strokes_bright.jpg",
+        "size_bytes": 18000950,
+        "modified": "2026-04-04T10:16:32.939618"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\frangi_strokes_combined.jpg",
+        "size_bytes": 17233789,
+        "modified": "2026-04-04T10:16:33.087853"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\frangi_strokes_dark.jpg",
+        "size_bytes": 17924708,
+        "modified": "2026-04-04T10:16:32.813574"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_blob_arc_frangi.jpg",
+        "size_bytes": 6415123,
+        "modified": "2026-04-04T10:25:30.213037"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_blob_doh.jpg",
+        "size_bytes": 2647227,
+        "modified": "2026-04-04T10:24:49.385419"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_circular_ensemble.jpg",
+        "size_bytes": 7430266,
+        "modified": "2026-04-04T10:25:30.600211"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_dog.jpg",
+        "size_bytes": 4432575,
+        "modified": "2026-04-04T10:15:54.450649"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_frst.jpg",
+        "size_bytes": 948503,
+        "modified": "2026-04-04T10:23:01.317628"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_frst_variance.jpg",
+        "size_bytes": 933537,
+        "modified": "2026-04-04T10:23:52.207730"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_gabor_orientation.jpg",
+        "size_bytes": 18909055,
+        "modified": "2026-04-04T10:15:49.972990"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_gabor_response.jpg",
+        "size_bytes": 5430817,
+        "modified": "2026-04-04T10:15:49.841480"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_hough_circles.jpg",
+        "size_bytes": 1796412,
+        "modified": "2026-04-04T10:24:11.788652"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_photometric_dog.jpg",
+        "size_bytes": 4684817,
+        "modified": "2026-04-04T10:15:58.933164"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_unsharp.jpg",
+        "size_bytes": 8545488,
+        "modified": "2026-04-04T10:15:59.519042"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\fusion_unsharp_strong.jpg",
+        "size_bytes": 10009084,
+        "modified": "2026-04-04T10:16:00.206764"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\phase_congruency.jpg",
+        "size_bytes": 283580,
+        "modified": "2026-04-04T10:18:34.505497"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\morphology\\fusion_annular_blackhat.jpg",
+        "size_bytes": 5614661,
+        "modified": "2026-04-04T10:19:56.071299"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\morphology\\fusion_annular_multiscale.jpg",
+        "size_bytes": 5472931,
+        "modified": "2026-04-04T10:22:16.125605"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\morphology\\fusion_multiscale_bright.jpg",
+        "size_bytes": 5576239,
+        "modified": "2026-04-04T10:15:44.074112"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\morphology\\fusion_multiscale_dark.jpg",
+        "size_bytes": 5583886,
+        "modified": "2026-04-04T10:15:44.004110"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\morphology\\fusion_retinex_multiscale.jpg",
+        "size_bytes": 5257115,
+        "modified": "2026-04-04T10:15:45.007059"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\morphology\\fusion_valleys_blackhat.jpg",
+        "size_bytes": 5741634,
+        "modified": "2026-04-04T10:15:45.153592"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\pca\\fusion_pca_pc1.jpg",
+        "size_bytes": 4818297,
+        "modified": "2026-04-04T10:15:29.272630"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\pca\\fusion_pca_pc2.jpg",
+        "size_bytes": 5453712,
+        "modified": "2026-04-04T10:15:29.337782"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\pca\\fusion_pca_pc3.jpg",
+        "size_bytes": 6915969,
+        "modified": "2026-04-04T10:15:29.407964"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\pca\\fusion_pca_pc4.jpg",
+        "size_bytes": 7086448,
+        "modified": "2026-04-04T10:15:29.480973"
+      },
+      {
+        "filename": "edges\\normal_map.png",
+        "size_bytes": 14688267,
+        "modified": "2026-04-06T12:41:38.259639"
+      },
+      {
+        "filename": "neural\\ps_normals_rgb.png",
+        "size_bytes": 14024933,
+        "modified": "2026-04-06T12:47:12.088589"
+      },
+      {
+        "filename": "streiflicht\\RTI3\\edges\\normal_map.png",
+        "size_bytes": 12632677,
+        "modified": "2026-04-04T10:16:03.778505"
+      },
+      {
+        "filename": "registration_shifts.txt",
+        "size_bytes": 2308,
+        "modified": "2026-04-04T10:10:18.996893"
+      }
+    ]
+  }
+}
