@@ -360,9 +360,15 @@ const onZoom = (e: WheelEvent) => {
 
 onMounted(async () => {
   try {
-    const res = await fetch('/data/inscriptions.json');
+    const res = await fetch(import.meta.env.BASE_URL + 'data/inscriptions.json');
     if (!res.ok) throw new Error('Failed to load inscriptions data');
     const data: Inscription[] = await res.json();
+    // Rewrite absolute paths to be relative to base URL
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    for (const item of data) {
+      item.baseUrl = base + item.baseUrl;
+      item.defaultImage = base + item.defaultImage;
+    }
     inscriptions.value = data;
     if (data.length > 0) {
       selectInscription(data[0]);
