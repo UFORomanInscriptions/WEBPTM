@@ -15,8 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
-
 export interface InscriptionItem {
   id: string;
   title: string;

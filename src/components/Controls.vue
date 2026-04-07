@@ -44,10 +44,9 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import type { InscriptionItem } from './Gallery.vue';
 
-const props = defineProps<{
+defineProps<{
   inscription: InscriptionItem | null;
 }>();
 </script>

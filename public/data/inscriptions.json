@@ -1,10 +1,121 @@
 [
   {
-    "id": "1",
-    "title": "UFO Roman Inscription (RTI3)",
+    "id": "RTI3",
+    "title": "Roman Inscription RTI3",
     "date": "Unknown Date",
     "translation": "N/A",
-    "rtiFile": "/data/RTI3/RTI3.ptm",
-    "description": "Interactive Polynomial Texture Mapping (PTM) file of a Roman Inscription."
+    "description": "Interactive Polynomial Texture Mapping (PTM) visualization of a Roman stone inscription, processed with 20+ enhancement techniques including photometric stereo, edge detection, binarization, PCA decomposition, and neural network analysis.",
+    "baseUrl": "/data/RTI3",
+    "defaultImage": "/data/RTI3/rti_mean_stack.jpg",
+    "categories": {
+      "Summary": [
+        { "label": "Combined Best", "file": "fusion_combined_best.jpg" },
+        { "label": "PCA Relief", "file": "fusion_pca_relief.jpg" },
+        { "label": "Albedo", "file": "rti_albedo.jpg" },
+        { "label": "Albedo Detail", "file": "rti_albedo_detail.jpg" },
+        { "label": "RTI Combined Best", "file": "rti_combined_best.jpg" },
+        { "label": "Curvature", "file": "rti_curvature.jpg" },
+        { "label": "Curvature Mean", "file": "rti_curvature_mean.jpg" },
+        { "label": "Epigraphy Best", "file": "rti_epigraphy_best.jpg" },
+        { "label": "Mean Stack", "file": "rti_mean_stack.jpg" },
+        { "label": "Normal Map", "file": "rti_normal_map.jpg" },
+        { "label": "Skylight", "file": "rti_skylight.jpg" },
+        { "label": "Specular", "file": "rti_specular.jpg" }
+      ],
+      "Raking Light": [
+        { "label": "North", "file": "rti_raking_N.jpg" },
+        { "label": "NE", "file": "rti_raking_NE.jpg" },
+        { "label": "East", "file": "rti_raking_E.jpg" },
+        { "label": "SE", "file": "rti_raking_SE.jpg" },
+        { "label": "South", "file": "rti_raking_S.jpg" },
+        { "label": "SW", "file": "rti_raking_SW.jpg" },
+        { "label": "West", "file": "rti_raking_W.jpg" },
+        { "label": "NW", "file": "rti_raking_NW.jpg" },
+        { "label": "Max", "file": "rti_raking_max.jpg" },
+        { "label": "Mean", "file": "rti_raking_mean.jpg" }
+      ],
+      "Core Fusions": [
+        { "label": "Denoised", "file": "core/fusion_denoised.jpg" },
+        { "label": "Focus Map", "file": "core/fusion_focus_map.jpg" },
+        { "label": "Focus Stack", "file": "core/fusion_focus_stack.jpg" },
+        { "label": "Gradient Field", "file": "core/fusion_gradient_field.jpg" },
+        { "label": "Laplacian Pyramid", "file": "core/fusion_laplacian_pyramid.jpg" },
+        { "label": "Max Projection", "file": "core/fusion_max_projection.jpg" },
+        { "label": "Optimized", "file": "core/fusion_optimized.jpg" },
+        { "label": "Photometric Stereo", "file": "core/fusion_photometric_stereo.jpg" },
+        { "label": "Retinex", "file": "core/fusion_retinex.jpg" }
+      ],
+      "Edges": [
+        { "label": "Coherence Enhanced", "file": "edges/coherence_enhanced.jpg" },
+        { "label": "Frangi", "file": "edges/coherence_frangi.jpg" },
+        { "label": "Frangi Strokes Bright", "file": "edges/frangi_strokes_bright.jpg" },
+        { "label": "Frangi Combined", "file": "edges/frangi_strokes_combined.jpg" },
+        { "label": "Unsharp", "file": "edges/fusion_unsharp.jpg" },
+        { "label": "Unsharp Strong", "file": "edges/fusion_unsharp_strong.jpg" },
+        { "label": "DoG", "file": "edges/fusion_dog.jpg" },
+        { "label": "Phase Congruency", "file": "edges/phase_congruency.jpg" },
+        { "label": "Normal Map", "file": "edges/normal_map.png" }
+      ],
+      "Enhancement": [
+        { "label": "Diffuse", "file": "enhance2/enh2_diffuse.jpg" },
+        { "label": "Guided Sharp", "file": "enhance2/enh2_guided_sharp.jpg" },
+        { "label": "Homomorphic", "file": "enhance2/enh2_homomorphic.jpg" },
+        { "label": "Kuwahara", "file": "enhance2/enh2_kuwahara.jpg" },
+        { "label": "Monogenic Amplitude", "file": "enhance2/enh2_monogenic_amplitude.jpg" },
+        { "label": "Monogenic Incised", "file": "enhance2/enh2_monogenic_incised.jpg" },
+        { "label": "Path Opening", "file": "enhance2/enh2_path_opening.jpg" },
+        { "label": "RL Deconv", "file": "enhance2/enh2_rl_deconv.jpg" },
+        { "label": "Ultimate Opening", "file": "enhance2/enh2_ultimate_opening.jpg" }
+      ],
+      "Binarization": [
+        { "label": "Otsu", "file": "binarization/binary_otsu.jpg" },
+        { "label": "Sauvola", "file": "binarization/binary_sauvola.jpg" },
+        { "label": "Adaptive Gaussian", "file": "binarization/binary_adaptive_gaussian.jpg" },
+        { "label": "Adaptive Mean", "file": "binarization/binary_adaptive_mean.jpg" },
+        { "label": "DIBCO Ensemble", "file": "binarization/binary_dibco_ensemble.jpg" },
+        { "label": "DIBCO Nick", "file": "binarization/binary_dibco_nick.jpg" },
+        { "label": "Wolf-Jolion", "file": "binarization/binary_dibco_wolf_jolion.jpg" }
+      ],
+      "Morphology": [
+        { "label": "Annular Blackhat", "file": "morphology/fusion_annular_blackhat.jpg" },
+        { "label": "Annular Multiscale", "file": "morphology/fusion_annular_multiscale.jpg" },
+        { "label": "Multiscale Bright", "file": "morphology/fusion_multiscale_bright.jpg" },
+        { "label": "Multiscale Dark", "file": "morphology/fusion_multiscale_dark.jpg" },
+        { "label": "Retinex Multiscale", "file": "morphology/fusion_retinex_multiscale.jpg" },
+        { "label": "Valleys Blackhat", "file": "morphology/fusion_valleys_blackhat.jpg" }
+      ],
+      "PCA": [
+        { "label": "PC1", "file": "pca/fusion_pca_pc1.jpg" },
+        { "label": "PC2", "file": "pca/fusion_pca_pc2.jpg" },
+        { "label": "PC3", "file": "pca/fusion_pca_pc3.jpg" },
+        { "label": "PC4", "file": "pca/fusion_pca_pc4.jpg" }
+      ],
+      "Neural": [
+        { "label": "Ensemble Mean", "file": "neural/ensemble_mean.jpg" },
+        { "label": "Confidence", "file": "neural/confidence_map.jpg" },
+        { "label": "PS Albedo", "file": "neural/ps_albedo.jpg" },
+        { "label": "PS Depth", "file": "neural/ps_depth.jpg" },
+        { "label": "NMF Surface Relief", "file": "neural/nmf_surface_relief.jpg" },
+        { "label": "NMF Carving Edge", "file": "neural/nmf_carving_edge.jpg" },
+        { "label": "NMF Substrate", "file": "neural/nmf_component_substrate.jpg" },
+        { "label": "NMF Lichen", "file": "neural/nmf_component_lichen.jpg" }
+      ],
+      "Advanced": [
+        { "label": "Flow Direction", "file": "advanced/adv_flow_direction.jpg" },
+        { "label": "Flow Magnitude", "file": "advanced/adv_flow_magnitude.jpg" },
+        { "label": "SWT Map", "file": "advanced/adv_swt_map.jpg" },
+        { "label": "Topo Combined", "file": "advanced/adv_topo_combined.jpg" },
+        { "label": "Topo Filtered", "file": "advanced/adv_topo_filtered.jpg" },
+        { "label": "Topo Persistence", "file": "advanced/adv_topo_persistence.jpg" }
+      ],
+      "Experimental": [
+        { "label": "Rolling Guidance", "file": "experimental/exp_rolling_guidance.jpg" },
+        { "label": "Shock Filter", "file": "experimental/exp_shock_filter.jpg" },
+        { "label": "Intrinsic Reflectance", "file": "experimental/exp_intrinsic_reflectance.jpg" },
+        { "label": "Fourier Band Relief", "file": "experimental/exp_fourier_band_relief.jpg" },
+        { "label": "Structure Tensor", "file": "experimental/exp_structure_tensor_field.jpg" },
+        { "label": "TV Shock Cascade", "file": "experimental/exp_tv_shock_cascade.jpg" }
+      ]
+    }
   }
 ]
