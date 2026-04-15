@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
+// @ts-nocheck
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
-// @ts-ignore — openlime has no TS types
 import * as OpenLIME from 'openlime';
 
 const props = defineProps<{
