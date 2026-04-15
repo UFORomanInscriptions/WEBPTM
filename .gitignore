@@ -26,3 +26,6 @@ dist-ssr
 # Large PTM uploaded directly to VPS via scp
 rti_altar_ohne_inschrift.ptm
 .claude/
+
+# Local build artifacts for relight-cli docker image
+.relight-src/

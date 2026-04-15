@@ -1,0 +1,10 @@
+node_modules
+dist
+data
+public
+.git
+.claude
+upload_altar.cjs
+vps_check.cjs
+*.ptm
+*.rti

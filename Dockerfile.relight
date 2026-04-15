@@ -1,0 +1,15 @@
+FROM ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates cmake g++ make pkg-config \
+    qt6-base-dev libqt6svg6-dev qt6-declarative-dev libxkbcommon-dev \
+    libjpeg-dev libtiff-dev libpng-dev libeigen3-dev liblcms2-dev \
+    && rm -rf /var/lib/apt/lists/*
+COPY .relight-src /src/relight
+RUN cd /src/relight && mkdir build && cd build \
+    && cmake -DCMAKE_BUILD_TYPE=Release .. \
+    && make -j2 relight-cli \
+    && cp relight-cli/relight-cli /usr/local/bin/relight-cli \
+    && rm -rf /src/relight/build
+WORKDIR /work
+ENTRYPOINT ["relight-cli"]
