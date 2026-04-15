@@ -3,6 +3,8 @@ const { Client } = require('ssh2');
 const HOST = '217.154.175.96';
 const USER = 'root';
 const PASS = '3qA9lQnA';
+const WEBPTM_DIR = '/opt/research-portal/webptm';
+const NGINX_CONF = '/opt/research-portal/server-deployment/nginx/default.conf';
 
 function exec(conn, cmd) {
   return new Promise((resolve, reject) => {
@@ -26,55 +28,51 @@ async function main() {
   });
   console.log('Connected!\n');
 
-  // Install Node.js if needed, clone repo, build, deploy
   const commands = [
-    // Install git-lfs and Node if missing
-    'apt-get update -qq && apt-get install -y -qq git git-lfs curl > /dev/null 2>&1 && echo "packages ok"',
-    'which node || (curl -fsSL https://deb.nodesource.com/setup_20.x | bash - > /dev/null 2>&1 && apt-get install -y nodejs > /dev/null 2>&1) && node --version',
-    // Clone repo
-    'rm -rf /tmp/webptm && git clone https://github.com/UFORomanInscriptions/WEBPTM.git /tmp/webptm 2>&1',
-    // Install & build
-    'cd /tmp/webptm && npm install 2>&1 | tail -3',
-    'cd /tmp/webptm && npm run build 2>&1',
-    // Deploy to nginx webroot (skip huge PTM/RTI/PLY files)
-    'rm -rf /var/www/html/*',
-    'cd /tmp/webptm/dist && find . -name "*.ptm" -o -name "*.rti" -o -name "*.ply" | xargs rm -f 2>/dev/null; cp -r . /var/www/html/ && echo "Files deployed"',
-    'ls -la /var/www/html/',
-    // Configure nginx
-    `cat > /etc/nginx/sites-available/default << 'EOF'
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    root /var/www/html;
-    index index.html;
-    server_name _;
-    location / {
-        try_files \\$uri \\$uri/ /index.html;
-    }
-    location ~* \\.(jpg|jpeg|png|gif|ico|svg|css|js|woff2?|ttf)$ {
-        expires 30d;
-        add_header Cache-Control "public, immutable";
-    }
-    gzip on;
-    gzip_types text/plain text/css application/json application/javascript text/xml image/svg+xml;
-}
-EOF`,
-    'nginx -t 2>&1',
-    'systemctl reload nginx 2>&1 && echo "nginx reloaded"',
-    // Cleanup
-    'rm -rf /tmp/webptm && echo "cleanup done"',
+    // Preserve any large PTMs previously scp'd to the VPS (e.g. rti_altar_ohne_inschrift.ptm)
+    `mkdir -p /tmp/webptm-preserve && (cd ${WEBPTM_DIR} 2>/dev/null && find . -name "rti_altar_ohne_inschrift.ptm" -exec cp --parents {} /tmp/webptm-preserve/ \\;) 2>/dev/null; echo "preserve done"`,
+    // 1. Wipe webptm dir and fresh clone+build (force latest main, include LFS objects)
+    `rm -rf ${WEBPTM_DIR} /tmp/webptm && mkdir -p ${WEBPTM_DIR}`,
+    `git clone --branch main https://github.com/UFORomanInscriptions/WEBPTM.git /tmp/webptm 2>&1 && cd /tmp/webptm && (git lfs pull 2>&1 || true) && npm install 2>&1 && npm run build 2>&1`,
+    // Copy built dist (keep ptm/rti in the build output)
+    `cp -r /tmp/webptm/dist/. ${WEBPTM_DIR}/ && echo "Files copied to ${WEBPTM_DIR}"`,
+    // Restore preserved large PTM(s)
+    `if [ -d /tmp/webptm-preserve/. ]; then cp -rvn /tmp/webptm-preserve/. ${WEBPTM_DIR}/ 2>&1 || true; fi; rm -rf /tmp/webptm-preserve`,
+    `ls ${WEBPTM_DIR}/`,
+    `du -sh ${WEBPTM_DIR}/`,
+
+    // 2. Add volume mount to docker-compose for nginx
+    // First check current docker-compose
+    `cat /opt/research-portal/server-deployment/docker-compose.yml | grep -A 20 'nginx:'`,
+
+    // 3. Add volume mount for webptm to nginx container
+    `grep -q 'webptm' /opt/research-portal/server-deployment/docker-compose.yml || sed -i '/default.conf:ro/a\\      - /opt/research-portal/webptm:/usr/share/nginx/webptm:ro' /opt/research-portal/server-deployment/docker-compose.yml`,
+
+    // 4. Add location block to nginx config (before the catch-all "/" location)
+    `grep -q '/rti' ${NGINX_CONF} || sed -i '/# Portal: Landing page/i\\    # WEBPTM RTI Viewer\\n    location /rti/ {\\n        alias /usr/share/nginx/webptm/;\\n        index index.html;\\n        try_files \\$uri \\$uri/ /rti/index.html;\\n    }\\n\\n    location /rti {\\n        return 301 /rti/;\\n    }\\n' ${NGINX_CONF}`,
+
+    // 5. Verify nginx config
+    `cat ${NGINX_CONF} | grep -A 8 'WEBPTM'`,
+
+    // 6. Restart nginx container to pick up new config and volume
+    `cd /opt/research-portal/server-deployment && docker compose down nginx 2>&1 && docker compose up -d nginx 2>&1`,
+
+    // 7. Verify
+    `docker exec server-deployment-nginx-1 ls /usr/share/nginx/webptm/ 2>/dev/null || echo "volume not mounted yet"`,
+    `docker exec server-deployment-nginx-1 nginx -t 2>&1`,
+    `curl -s -o /dev/null -w "%{http_code}" http://localhost/rti/`,
   ];
 
   for (const cmd of commands) {
     const result = await exec(conn, cmd);
-    console.log('');
-    if (result.code !== 0 && !cmd.includes('which node')) {
-      console.error(`Command failed with code ${result.code}`);
+    console.log('\n');
+    if (result.code !== 0) {
+      console.error(`  (exit code: ${result.code})\n`);
     }
   }
 
   conn.end();
-  console.log(`\nDone! Site is live at http://${HOST}/`);
+  console.log(`\nDone! Site should be live at http://${HOST}/rti/`);
 }
 
 main().catch(e => { console.error('Error:', e.message); process.exit(1); });
