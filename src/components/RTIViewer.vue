@@ -60,17 +60,16 @@ const init = async () => {
 
     viewer.addLayer('rti', layer);
 
-    // eslint-disable-next-line no-new
-    new OpenLIME.UIBasic(viewer, {
+    // NOTE: do NOT pass an `actions` option — Object.assign in UIBasic
+    // would shallow-replace the default actions object and wipe every
+    // action's `task` handler, so icons render + hover but clicks
+    // would do nothing. Mutate defaults in place instead.
+    const ui = new OpenLIME.UIBasic(viewer, {
       showLightDirections: true,
-      actions: {
-        home: { display: true },
-        fullscreen: { display: true },
-        light: { display: true },
-        zoomin: { display: true },
-        zoomout: { display: true },
-      },
     });
+    if (ui.actions.zoomin) ui.actions.zoomin.display = true;
+    if (ui.actions.zoomout) ui.actions.zoomout.display = true;
+    if (ui.actions.light) ui.actions.light.display = true;
   } catch (e: any) {
     console.error('OpenLIME init failed', e);
     error.value = `Failed to load RTI: ${e?.message || e}`;
