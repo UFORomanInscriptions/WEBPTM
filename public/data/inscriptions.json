@@ -1,10 +1,10 @@
 [
   {
     "id": "RTI3",
-    "title": "Roman Inscription RTI3",
+    "title": "Altar ohne Inschrift",
     "date": "Unknown Date",
     "translation": "N/A",
-    "description": "Interactive Polynomial Texture Mapping (PTM) visualization of a Roman stone inscription, processed with 20+ enhancement techniques including photometric stereo, edge detection, binarization, PCA decomposition, and neural network analysis.",
+    "description": "Interactive Polynomial Texture Mapping (PTM) visualization of a Roman altar without inscription, processed with 20+ enhancement techniques including photometric stereo, edge detection, binarization, PCA decomposition, and neural network analysis.",
     "baseUrl": "/data/RTI3",
     "defaultImage": "/data/RTI3/rti_mean_stack.jpg",
     "categories": {
