@@ -40,6 +40,11 @@ const init = async () => {
   }
   error.value = '';
 
+  // Point OpenLIME at the skin we copied into public/openlime/
+  // BASE_URL = '/rti/' in production, '/' in dev
+  const base = (import.meta as any).env.BASE_URL || '/';
+  OpenLIME.Skin.setUrl(`${base}openlime/skin/skin.svg`);
+
   try {
     viewer = new OpenLIME.Viewer(container.value, {
       background: [0, 0, 0, 1],
