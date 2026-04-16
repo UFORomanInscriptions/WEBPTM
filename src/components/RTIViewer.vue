@@ -4,9 +4,10 @@
     <div v-if="error" class="absolute inset-0 flex items-center justify-center bg-black/90 text-red-400 text-sm p-4 text-center">
       {{ error }}
     </div>
-    <div class="absolute bottom-3 left-3 bg-black/70 rounded-lg px-3 py-2 text-xs text-gray-300 max-w-[220px]">
-      <div class="font-semibold text-gray-200 mb-1">Interactive RTI</div>
-      <div class="text-gray-400">Drag with <span class="text-indigo-300">Ctrl/Shift</span> (or use the light button) to change light direction. Scroll to zoom.</div>
+    <div class="absolute bottom-3 left-3 bg-black/70 rounded-lg px-3 py-2 text-xs text-gray-300 max-w-[260px]">
+      <div class="font-semibold text-gray-200 mb-1">Interactive RTI Viewer</div>
+      <div class="text-gray-400 mb-1.5">Roman inscription from Ebersdorf, Styria. Reflectance Transformation Imaging (RTI) enables virtual relighting to reveal surface details invisible under fixed illumination.</div>
+      <div class="text-gray-400">Drag with <span class="text-indigo-300">Ctrl/Shift</span> or use the <span class="text-indigo-300">light button</span> to change light direction. Scroll to zoom.</div>
     </div>
   </div>
 </template>
@@ -27,8 +28,12 @@ const error = ref<string>('');
 let viewer: any = null;
 
 const rtiUrl = () => {
-  const sub = props.rtiPath || 'relight_altar';
-  return `${props.baseUrl}/${sub}/info.json`;
+  if (props.rtiPath) {
+    return `${props.baseUrl}/${props.rtiPath}/info.json`;
+  }
+  // Default: Ebersdorf dataset at /data/20260414_Ebersdorf/
+  const base = (import.meta as any).env.BASE_URL || '/';
+  return `${base}data/20260414_Ebersdorf/info.json`;
 };
 
 const init = async () => {
@@ -54,7 +59,7 @@ const init = async () => {
     const layer = new OpenLIME.Layer({
       type: 'rti',
       url: rtiUrl(),
-      layout: 'image',
+      layout: 'deepzoom',
       normals: false,
     });
 

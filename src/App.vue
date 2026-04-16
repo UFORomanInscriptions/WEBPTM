@@ -77,12 +77,16 @@
         <div v-if="selected && viewMode === 'rti'" class="border-t border-gray-700 p-3 flex-1">
           <h2 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-2">Interactive RTI</h2>
           <p class="text-xs text-gray-400 leading-relaxed">
-            Drag on the image to change the virtual light direction. The viewer blends 8 raking light photographs taken from different angles to simulate interactive relighting.
+            Reflectance Transformation Imaging (RTI) captures a surface under varying light directions and lets you interactively relight the object. This reveals incised letters, tool marks, and surface wear that are invisible under ordinary lighting.
           </p>
           <div class="mt-3 text-xs text-gray-500 space-y-1">
             <div class="flex gap-2"><span class="text-yellow-400">&#9679;</span> Light position</div>
-            <div class="flex gap-2"><span class="text-gray-400">&#9675;</span> Drag to relight</div>
+            <div class="flex gap-2"><span class="text-gray-400">&#9675;</span> Ctrl/Shift + drag to relight</div>
+            <div class="flex gap-2"><span class="text-gray-400">&#9675;</span> Scroll to zoom</div>
           </div>
+          <p class="text-xs text-gray-500 mt-3 leading-relaxed">
+            Powered by <span class="text-gray-400">OpenLIME</span> &mdash; an open-source WebGL viewer for multi-resolution light-dependent imagery.
+          </p>
         </div>
       </aside>
 
