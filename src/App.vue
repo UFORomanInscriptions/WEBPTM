@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen w-full bg-gray-950 text-gray-100 flex flex-col font-sans overflow-hidden">
-    <!-- Header -->
-    <header class="bg-gray-900 border-b border-gray-800 px-4 py-3 flex justify-between items-center shadow-md z-10 shrink-0">
+    <!-- Header (hidden on mobile) -->
+    <header class="hidden md:flex bg-gray-900 border-b border-gray-800 px-4 py-3 justify-between items-center shadow-md z-10 shrink-0">
       <div class="flex items-center gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -10,8 +10,8 @@
           UFO Roman Inscriptions
         </h1>
       </div>
-      <!-- View mode toggle -->
-      <div v-if="selected" class="flex bg-gray-800 rounded-lg p-0.5 border border-gray-700">
+      <!-- View mode toggle (hidden for now, RTI-only) -->
+      <div v-if="false && selected" class="flex bg-gray-800 rounded-lg p-0.5 border border-gray-700">
         <button
           @click="viewMode = 'rti'"
           :class="['px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
@@ -32,8 +32,8 @@
 
     <!-- Main Content Area -->
     <main class="flex-1 flex overflow-hidden min-h-0">
-      <!-- Left Sidebar -->
-      <aside class="w-60 shrink-0 bg-gray-800 border-r border-gray-700 flex flex-col overflow-hidden">
+      <!-- Left Sidebar (hidden on mobile) -->
+      <aside class="hidden md:flex w-60 shrink-0 bg-gray-800 border-r border-gray-700 flex-col overflow-hidden">
         <div class="p-3 border-b border-gray-700">
           <h2 class="text-sm font-bold text-gray-300 uppercase tracking-wider">Inscriptions</h2>
         </div>
@@ -143,8 +143,8 @@
         </div>
       </div>
 
-      <!-- Right Sidebar: Details & Description -->
-      <aside v-if="selected" class="w-72 shrink-0 bg-gray-800 border-l border-gray-700 p-4 overflow-y-auto">
+      <!-- Right Sidebar: Details & Description (hidden for now) -->
+      <aside v-if="false && selected" class="w-72 shrink-0 bg-gray-800 border-l border-gray-700 p-4 overflow-y-auto">
         <h2 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-4">Details</h2>
         <div class="flex flex-col gap-3 mb-5">
           <div>
