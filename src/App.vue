@@ -149,22 +149,22 @@
         <div class="flex flex-col gap-3 mb-5">
           <div>
             <h3 class="text-indigo-400 font-semibold text-xs mb-0.5">Title</h3>
-            <p class="text-gray-300 text-sm">{{ selected.title }}</p>
+            <p class="text-gray-300 text-sm">{{ selected?.title }}</p>
           </div>
           <div>
             <h3 class="text-indigo-400 font-semibold text-xs mb-0.5">Date</h3>
-            <p class="text-gray-300 text-sm">{{ selected.date }}</p>
+            <p class="text-gray-300 text-sm">{{ selected?.date }}</p>
           </div>
           <div>
             <h3 class="text-indigo-400 font-semibold text-xs mb-0.5">Description</h3>
-            <p class="text-gray-300 text-xs leading-relaxed">{{ selected.description }}</p>
+            <p class="text-gray-300 text-xs leading-relaxed">{{ selected?.description }}</p>
           </div>
         </div>
 
         <!-- Technique description (gallery mode) -->
         <div v-if="viewMode === 'gallery' && activeImage && techniqueDesc" class="border-t border-gray-700 pt-4">
           <h2 class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-2">Technique Info</h2>
-          <h3 class="text-cyan-400 font-semibold text-sm mb-1">{{ activeImage.label }}</h3>
+          <h3 class="text-cyan-400 font-semibold text-sm mb-1">{{ activeImage?.label }}</h3>
           <p class="text-gray-400 text-xs leading-relaxed">{{ techniqueDesc }}</p>
         </div>
 
