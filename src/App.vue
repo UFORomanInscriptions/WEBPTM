@@ -10,8 +10,8 @@
           UFO Roman Inscriptions
         </h1>
       </div>
-      <!-- View mode toggle (hidden for now, RTI-only) -->
-      <div v-if="false && selected" class="flex bg-gray-800 rounded-lg p-0.5 border border-gray-700">
+      <!-- View mode toggle -->
+      <div v-if="selected" class="flex bg-gray-800 rounded-lg p-0.5 border border-gray-700">
         <button
           @click="viewMode = 'rti'"
           :class="['px-3 py-1.5 rounded-md text-sm font-medium transition-colors',
@@ -27,7 +27,7 @@
           Technique Gallery
         </button>
       </div>
-      <div class="text-sm text-gray-400">Interactive RTI Viewer</div>
+      <div v-if="!selected" class="text-sm text-gray-400">Interactive RTI Viewer</div>
     </header>
 
     <!-- Main Content Area -->
